@@ -1,13 +1,18 @@
 package Helper
 
-func FormatListByType(result [][]string, className string) map[string]string  {
+func FormatListByType(result []map[string]string, className string) []map[string]string  {
 	if result == nil{
 		return nil
 	}
-	//rowList := []map[string]string
+	var rowList  []map[string]string
+	rowList =    []map[string]string{}
+	for i,row := range result{
+		rowList[i] = FormatRowByType(row, className)
+	}
+	return  rowList
 }
-func FormatRowByType()  {
-	
+func FormatRowByType(row map[string]string, className string) map[string]string  {
+	return  row
 }
 func ListToEntity()  {
 	
